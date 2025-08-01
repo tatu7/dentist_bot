@@ -1,0 +1,5 @@
+
+module.exports = {
+  BOT_TOKEN: "8221943888:AAGE9qke635zF1NhGLvVI-qCOCSh7-Lqd_o",
+  GROUP_ID: "-1002734651480"
+}; 
