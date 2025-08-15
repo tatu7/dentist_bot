@@ -1,6 +1,6 @@
-# Telegram Feedback Bot
+# Buvayda Tuman Tibbiyot Birlashmasi Tug'ruqxona Boti
 
-Bu bot foydalanuvchilardan fikr yig'ish uchun yaratilgan.
+Bu bot Buvayda tuman tibbiyot birlashmasi tug'ruqxona bo'limi uchun yaratilgan.
 
 ## O'rnatish
 
@@ -39,9 +39,44 @@ npm start
 
 ## Bot funksiyalari
 
-1. `/start` - Botni ishga tushirish
-2. Foydalanuvchi to'liq ism va familiyasini kiritadi
-3. Telefon raqamini kiritadi
-4. Reyting beradi (Yaxshi/Yomon)
-5. Fikrini yozadi
-6. Barcha ma'lumotlar guruhga yuboriladi
+### 🏠 Asosiy menyu
+
+- **📍 Manzil** - Tug'ruqxona manzili va Google Maps lokatsiyasi
+- **👥 Navbatchilar haqida ma'lumot** - Vrachlar va hamshiralar haqida ma'lumot
+- **💬 Fikir bildirish** - Xizmat sifatiga fikr va reyting berish
+- **🚨 Korrupsiya to'g'risida ma'lumot berish** - Korrupsiya haqida hisobot berish
+
+### 📍 Manzil
+
+- Buvayda tuman, Kelajak ko'chasi 103 uy
+- Google Maps lokatsiyasi bilan
+
+### 👥 Navbatchilar haqida ma'lumot
+
+- Vrachlar haqida ma'lumot
+- Hamshiralar haqida ma'lumot
+- Alohida rasm ko'rinishida ma'lumot
+
+### 💬 Fikir bildirish
+
+- Yaxshi/Yomon reyting berish
+- Izoh qoldirish
+- Fikrlar guruhga yuboriladi
+
+### 🚨 Korrupsiya hisoboti
+
+- Vrach, hamshira yoki boshqa hodim tanlash
+- Hodim ismini kiritish
+- Korrupsiya tafsilotlarini yozish
+- Hisobotlar guruhga yuboriladi
+
+## Render.com da deploy qilish
+
+1. GitHub repository ni Render.com ga ulang
+2. Service Type: "Web Service" tanlang
+3. Environment Variables:
+   - `PORT` = `$PORT`
+   - `BOT_TOKEN` = sizning bot token
+   - `GROUP_ID` = guruh ID
+4. Build Command: `npm install`
+5. Start Command: `npm start`

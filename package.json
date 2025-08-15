@@ -1,7 +1,7 @@
 {
-  "name": "telegram-feedback-bot",
+  "name": "buvayda-maternity-bot",
   "version": "1.0.0",
-  "description": "Telegram bot for collecting user feedback",
+  "description": "Telegram bot for Buvayda District Medical Association Maternity Department",
   "main": "bot.js",
   "scripts": {
     "start": "PORT=$PORT node bot.js",
