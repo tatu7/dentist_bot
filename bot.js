@@ -1,7 +1,19 @@
 const TelegramBot = require('node-telegram-bot-api');
 const config = require('./config');
+const http = require('http');
 
 const bot = new TelegramBot(config.BOT_TOKEN, { polling: true });
+
+// Simple HTTP server for Render.com port binding
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot is running!');
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`HTTP server running on port ${PORT}`);
+});
 
 // User states
 const userStates = new Map();

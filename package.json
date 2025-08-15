@@ -4,7 +4,7 @@
   "description": "Telegram bot for collecting user feedback",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js",
+    "start": "PORT=$PORT node bot.js",
     "dev": "nodemon bot.js"
   },
   "dependencies": {
