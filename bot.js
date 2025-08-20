@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
   res.end('Bot is running!');
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
   console.log(`HTTP server running on port ${PORT}`);
 });
