@@ -166,9 +166,9 @@ bot.on('message', (msg) => {
         // Send thank you message
         bot.sendMessage(chatId, 'Fikringiz uchun rahmat!', backToMainKeyboard);
 
-        // Clear user state and return to main menu
+        // Keep user data but reset state to main menu
         userState.state = STATES.MAIN_MENU;
-        userState.data = {};
+        userState.data.feedbackComment = undefined; // Clear only feedback data
         userStates.set(userId, userState);
       }
       break;
@@ -184,9 +184,10 @@ bot.on('message', (msg) => {
         // Send completion message
         bot.sendMessage(chatId, 'Ma\'lumot uchun rahmat! Tez orada tekshirib chiqamiz.', backToMainKeyboard);
 
-        // Clear user state and return to main menu
+        // Keep user data but reset state to main menu
         userState.state = STATES.MAIN_MENU;
-        userState.data = {};
+        userState.data.corruptionDetails = undefined; // Clear only corruption data
+        userState.data.corruptionType = undefined; // Clear corruption type
         userStates.set(userId, userState);
       }
       break;
@@ -206,6 +207,14 @@ bot.on('callback_query', (callbackQuery) => {
   switch (data) {
     case 'back_to_main':
       bot.answerCallbackQuery(callbackQuery.id);
+
+      // Ensure user data is preserved when returning to main menu
+      if (userStates.has(userId)) {
+        const userState = userStates.get(userId);
+        userState.state = STATES.MAIN_MENU;
+        userStates.set(userId, userState);
+      }
+
       bot.sendMessage(chatId, 'Asosiy menyuga qaytdingiz:', mainMenuKeyboard);
       break;
 
